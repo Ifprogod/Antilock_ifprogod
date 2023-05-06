@@ -1,0 +1,129 @@
+getgenv().CaughtOpenSource = true
+
+game:GetService("RunService").heartbeat:Connect(
+
+    function()
+
+        if getgenv().CaughtOpenSource ~= false then
+
+            local vel = game.Players.LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity
+
+            game.Players.LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity = Vector3.new(-1200, 800, -2)
+
+            game:GetService("RunService").RenderStepped:Wait()
+
+            game.Players.LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity = vel
+
+        end
+
+    end
+
+)
+
+local keycode = "z"
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+
+mouse.KeyDown:Connect(
+
+    function(keybind)
+
+        if keybind == keycode then
+
+            if getgenv().CaughtOpenSource == true then
+
+                getgenv().CaughtOpenSource = false
+
+                game.StarterGui:SetCore(
+
+                    "SendNotification",
+
+                    {
+
+                        Title = "antilock",
+
+                        Text = "đóng",
+
+                        Duration = 0.1
+
+                    }
+
+                )
+
+            else
+
+                getgenv().CaughtOpenSource = true
+
+                game.StarterGui:SetCore(
+
+                    "SendNotification",
+
+                    {
+
+                        Title = "antilock",
+
+                        Text = "mở",
+
+                        Duration = 0.1
+
+                    }
+
+                )
+
+            end
+
+        end
+
+    end
+
+)
+
+game.StarterGui:SetCore(
+
+    "SendNotification",
+
+    {
+
+        Title = "antilock",
+
+        Text = "v1",
+
+        Duration = 5
+
+    }
+
+)
+
+getgenv().keytoclick = "Z"
+
+tool = Instance.new("Tool")
+
+tool.RequiresHandle = false
+
+tool.Name = keytoclick
+
+tool.Activated:connect(function()
+
+    local vim = game:service("VirtualInputManager")
+
+vim:SendKeyEvent(true, keytoclick, false, game)
+
+end)
+
+tool.Parent = game.Players.LocalPlayer.Backpack
+
+wait(0.2)
+
+local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
+
+local Notify = AkaliNotif.Notify;
+
+Notify({
+
+Description = "GOD";
+
+Title = "ifprogod";
+
+Duration = 5;
+
+});

@@ -20,7 +20,7 @@ game:GetService("RunService").heartbeat:Connect(
 
 )
 
-local keycode = "z"
+local keycode = "Z"
 
 local mouse = game.Players.LocalPlayer:GetMouse()
 
